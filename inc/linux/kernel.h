@@ -16,8 +16,8 @@ void free_s(void *obj, int size);
 #define suser() (current->euid == 0)
 
 int init_srv(int srv_id, void *entry, int priority);
-void *pmap(unsigned long phys_addr, size_t size, int flags);
+void *pmap(unsigned long phys_addr, unsigned long size, int flags);
 int obj_mgr(int cmd, int obj_id, void *data);
-ssize_t ipc(int dest_id, const void *msg, size_t len, int flags);
+long ipc(int dest_id, const void *msg, unsigned long len, int flags);
 
 #endif
